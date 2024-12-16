@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AYTI Verse</title>
+    <link rel="icon" href="/static/images/Logo_AYTI.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/static/styles/styles.css" />
+    <script defer src="/static/scripts/script.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <div class="header">
+        <img src="/static/images/Logo_AYTI.png" alt="AYTIverse Logo" />
+        <h1>AYTI Verse</h1>
+        <p>
+          Embracing a New Era of Skin Color Detection, Connecting Cutting-Edge
+          Technology and Boundless Innovation to Foster a Deeper Understanding
+          of Human Diversity.
+        </p>
+
+        <div class="startWebcam">
+          <button id="startWebcam">Start Real-Time</button>
+        </div>
+      </div>
+
+      <!-- Empty Box -->
+      <div class="empty-box">
+        <img src="/static/images/color_skin.svg" alt="color_skin" />
+      </div>
+
+      <!-- Main Display -->
+      <div class="main-display" id="mainDisplay">
+        <!-- Webcam Feed -->
+        <div class="webcam-feed">
+          <img
+            id="webcamStream"
+            src=""
+            alt="Webcam Feed"
+            style="
+              width: 1020px;
+              height: 600px;
+              border: 2px solid #ccc;
+              border-radius: 8px;
+              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+              display: none;
+            "
+          />
+        </div>
+      </div>
+
+      <!-- Upload Section -->
+      <div class="upload-section">
+        <!-- Upload Image Section -->
+        <div class="upload-box" id="imageUploadBox">
+          <h3>Detection Image</h3>
+          <i class="fas fa-upload upload-icon"></i>
+          <p>
+            Drag & Drop or
+            <span class="highlight">Select</span> files to upload
+          </p>
+          <p>PNG or JPG</p>
+          <form
+            id="uploadImageForm"
+            action="/upload_image"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            <label class="custom-browse">
+              Browse
+              <input
+                type="file"
+                name="file"
+                accept="image/*"
+                required
+                style="display: none"
+                id="imageInput"
+              />
+            </label>
+            <button
+              type="submit"
+              id="imageUploadButton"
+              class="outline"
+              disabled
+            >
+              Upload Image
+            </button>
+          </form>
+        </div>
+
+        <!-- Upload Video Section -->
+        <div class="upload-box" id="videoUploadBox">
+          <h3>Detection Video</h3>
+          <i class="fas fa-upload upload-icon"></i>
+          <p>
+            Drag & Drop or
+            <span class="highlight">Select</span> files to upload
+          </p>
+          <p>MP4</p>
+          <form
+            id="uploadForm"
+            action="/upload"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            <label class="custom-browse">
+              Browse
+              <input
+                type="file"
+                name="file"
+                accept="video/*"
+                required
+                style="display: none"
+                id="videoInput"
+              />
+            </label>
+            <button
+              type="submit"
+              id="videoUploadButton"
+              class="outline"
+              disabled
+            >
+              Upload Video
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
